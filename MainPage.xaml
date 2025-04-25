@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AhmedGamal_Odev2.MainPage"
+             BackgroundColor="AntiqueWhite">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,20"
+            VerticalOptions="Center">
+
+            <Image
+                Source="ahmedgamal.jpeg"
+                HeightRequest="300"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Aspect="AspectFill" />
+
+            <Label
+                Text="Ahmed Gamel Elsayed Abdelaziz Kheder"
+                TextColor="#4E342E"   
+                FontSize="34"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Bartin Üniversitesi Bilgisayar Mühendisliği"
+                TextColor="#5D4037"  
+                    FontSize="18"
+                HorizontalOptions="Center"
+                FontAttributes="Italic" />
+
+                    <BoxView
+                HeightRequest="2"
+                WidthRequest="120"
+                Color="#FF6F00"
+                HorizontalOptions="Center" />
+
+                    <Label
+                Text="ÖDEV - 1"
+                TextColor="#D84315"   
+                        FontSize="26"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

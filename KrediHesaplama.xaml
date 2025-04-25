@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AhmedGamal_Odev2.KrediHesaplama"
+             Title="Kredi Hesaplama"
+             BackgroundColor="AntiqueWhite">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Kredi Hesaplama"
+                   FontSize="30"
+                   TextColor="#4E342E"  
+                HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+                <Picker x:Name="LoanTypePicker"
+                    Title="Kredi Türünü Seçin"
+                    TextColor="#4E342E"
+                    BackgroundColor="#F5F5DC"   
+                    TitleColor="#5D4037"
+                    FontAttributes="Bold"
+                    SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>İhtiyaç Kredisi</x:String>
+                            <x:String>Konut Kredisi</x:String>
+                            <x:String>Taşıt Kredisi</x:String>
+                            <x:String>Ticari Kredisi</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Kredi Tutarı (₺):"
+                   FontAttributes="Bold"
+                   TextColor="#5D4037" />
+                <Entry x:Name="AmountEntry"
+                   Placeholder="Örneğin: 50000"
+                   Keyboard="Numeric"
+                   TextColor="#4E342E"
+                   PlaceholderColor="#8D6E63"
+                   BackgroundColor="#F5F5DC"
+                   HeightRequest="45" />
+
+                <Label Text="Faiz Oranı (%):"
+                   FontAttributes="Bold"
+                   TextColor="#5D4037" />
+                <Entry x:Name="InterestRateEntry"
+                   Placeholder="Örneğin: 1.5"
+                   Keyboard="Numeric"
+                   TextColor="#4E342E"
+                   PlaceholderColor="#8D6E63"
+                   BackgroundColor="#F5F5DC"
+                   HeightRequest="45" />
+
+                <Label Text="Kredi Vadesi (Ay):"
+                   FontAttributes="Bold"
+                   TextColor="#5D4037" />
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Label Text="Vade (Ay):"
+                       TextColor="#5D4037"
+                       VerticalOptions="Center" />
+                    <Label x:Name="TermValueLabel"
+                       Text="1"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <Slider x:Name="TermSlider"
+                    Minimum="1"
+                    Maximum="120"
+                    Value="1"
+                    ValueChanged="OnSliderValueChanged"
+                    ThumbColor="#D84315"
+                    MinimumTrackColor="#D84315"
+                    MaximumTrackColor="#8D6E63" />
+
+                <Button Text="Hesapla"
+                    Clicked="OnCalculateClicked"
+                    BackgroundColor="#D84315"
+                    TextColor="#FFFFFF"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="55"
+                    Margin="0,10,0,0" />
+
+                <Frame CornerRadius="12"
+                   BorderColor="#5D4037"
+                   BackgroundColor="#F5F5DC"
+                   Padding="15"
+                   HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label x:Name="MonthlyPaymentLabel"
+                           Text="Aylık Taksit:"
+                           FontSize="18"
+                           TextColor="#5D4037"
+                           FontAttributes="Bold" />
+                        <Label x:Name="TotalPaymentLabel"
+                           Text="Toplam Ödeme:"
+                           FontSize="18"
+                           TextColor="#5D4037"
+                           FontAttributes="Bold" />
+                        <Label x:Name="TotalInterestLabel"
+                           Text="Toplam Faiz:"
+                           FontSize="18"
+                           TextColor="#5D4037"
+                           FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

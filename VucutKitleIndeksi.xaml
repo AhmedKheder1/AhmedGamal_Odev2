@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AhmedGamal_Odev2.VucutKitleIndeksi"
+             Title="Vücut Kitle İndeksi"
+            BackgroundColor="AntiqueWhite">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25" VerticalOptions="CenterAndExpand">
+
+            <Label Text="VKI = KG / (BOY * BOY)"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#4E342E"
+                   HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Kilonuz (KG):"
+                       FontSize="18"
+                       TextColor="#5D4037" />
+                <Slider x:Name="WeightSlider"
+                        Minimum="20"
+                        Maximum="200"
+                        ValueChanged="OnWeightSliderChanged"
+                        ThumbColor="#D84315"
+                        MinimumTrackColor="#D84315"
+                        MaximumTrackColor="#8D6E63" />
+                <Entry x:Name="WeightEntry"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center"
+                       WidthRequest="100"
+                       FontSize="16"
+                       TextColor="#4E342E"
+                       BackgroundColor="#F5F5DC"
+                       PlaceholderColor="#8D6E63"
+                       HeightRequest="40"
+                       TextChanged="OnWeightEntryChanged" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Boyunuz (CM):"
+                       FontSize="18"
+                       TextColor="#5D4037" />
+                <Slider x:Name="HeightSlider"
+                        Minimum="100"
+                        Maximum="250"
+                        ValueChanged="OnHeightSliderChanged"
+                        ThumbColor="#D84315"
+                        MinimumTrackColor="#D84315"
+                        MaximumTrackColor="#8D6E63" />
+                <Entry x:Name="HeightEntry"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center"
+                       WidthRequest="100"
+                       FontSize="16"
+                       TextColor="#4E342E"
+                       BackgroundColor="#F5F5DC"
+                       PlaceholderColor="#8D6E63"
+                       HeightRequest="40"
+                       TextChanged="OnHeightEntryChanged" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10" Padding="10">
+                <Label Text="VKI:"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#5D4037" />
+                <Label x:Name="ResultLabel"
+                       FontSize="24"
+                       TextColor="#D84315"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label x:Name="StatusLabel"
+                       FontSize="18"
+                       TextColor="#D84315"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
